@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScriptの練習</title>
+</head>
+<body>
+    <script>
+        /*
+            条件分岐
+            switch
+        */
+        var signal = "blue";
+
+        switch (signal) {
+            case "red":
+                console.log("stop!");
+                break;
+            case "green":
+            case "blue":
+                console.log("go!");
+                break;
+            case "yellow":
+                console.log("slow down!");
+                break;
+            default:
+                console.log("wrong signal");
+                break;
+        }    //括弧を忘れない
+
+        var i = 200;
+       do {
+           console.log(i);
+           i++;
+       } while (i < 10);
+
+       for (var i = 0; i < 10; i++) {
+            if (i === 5) {
+                // break;
+                continue;
+            }
+            console.log(i);
+        }
+        var name = prompt("お名前は？", "名無しさん");
+       console.log(name);
+
+       function hello(name) {
+           return "hello " + name;
+       }
+       var greet = hello("Tom");
+       console.log(greet);
+
+       (function() {
+            var x = 10,
+                y = 20;
+            console.log(x + y);
+        })();
+
+        var i = 0;
+        function show() {
+            console.log(i++);
+            var tid = setTimeout(function() {
+                show();
+            }, 1000);
+            if (i > 3) {
+                clearTimeout(tid);
+            }
+        }
+        show();
+        var user = {
+            name: "taguchi", // プロパティ
+            score: 80
+        };
+        // console.log(user["name"]);
+        // console.log(user.name);
+        user.score = 100;
+        console.log(user);
+
+        var user = {
+            email: "taguchi@gmail.com", // プロパティ
+            score: 80,
+            greet: function(name) { // メソッド
+                console.log("hello, " + name + " from " + this.email);
+            }
+        };
+        //console.log(user["email"]);
+        //console.log(user.email);
+        //user.score = 100;
+        //console.log(user);
+        user.greet("Tom");
+
+        
+
+    </script>
+</body>
+</html>
